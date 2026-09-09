@@ -1,46 +1,36 @@
 import java.util.*;
 
-public class pattern32 {
+public class Main {
     public static void main(String[] args) {
-      int n = 10 ;
+      int n = 5;
       int row = 1;
-      int space = 9;
-       int num = 9;
-     
-      int count = 0;
-    
-
-      while(row<=n){
+      int count = 1;
+      int num = 1;
+      while(row<=2*n-1){
         int i = 1;
-        while(i<=space){
-          System.out.print(" ");
+
+        while (i<=count){
+          if (i%2==0){
+            System.out.print("*");
+          }
+          else{
+            System.out.print(+num);
+          } 
           i++;
         }
 
-        int k = 1;
-        
-        while(k<=count){
-          System.out.print(num+"");
-          k++;
+        if (row<n){
           num++;
+          count=count+2;
         }
-        System.out.print("0");
-
-        int l = 1;
-        int num1=9;
-        while(l<=count){
-          System.out.print(num1+"");
-          l++;
-          num1--;
+        else{
+          num--;
+          count=count-2;
         }
-        if (row>1){
-          num=num-(count+1);
+          row++;
+          
+          System.out.println();
+          
         }
-        row++;
-        space--;
-        count++;
-        System.out.println();
-
       }
-    }
 }
